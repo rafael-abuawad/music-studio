@@ -5,9 +5,9 @@ import { ModeToggle } from "./mode-toggle";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Services", href: "#services" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Contact", href: "#contact" },
+  { name: "Services", href: "/#services" },
+  { name: "Pricing", href: "/#pricing" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export function Navbar() {
@@ -35,7 +35,9 @@ export function Navbar() {
           </div>
           <div className="flex items-center gap-2">
             <ModeToggle />
-            <Button>Book a Session</Button>
+            <Button asChild>
+              <Link href="#contact">Book a Session</Link>
+            </Button>
           </div>
         </div>
 

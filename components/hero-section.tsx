@@ -28,7 +28,9 @@ export function HeroSection({ title, subtitle }: HeroSectionProps) {
           {subtitle}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg">Get Started</Button>
+          <Button size="lg" asChild>
+            <Link href="#contact">Book a Session</Link>
+          </Button>
           <Button size="lg" variant="secondary" asChild>
             <Link href="/samples">Listen to Samples</Link>
           </Button>

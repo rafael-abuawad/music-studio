@@ -1,10 +1,10 @@
 import { TwitterIcon, InstagramIcon, FacebookIcon } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "Services", href: "#" },
-  { label: "Artists", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/#services" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const socialLinks = [
@@ -17,7 +17,7 @@ export function Footer() {
   return (
     <div className="w-full bg-secondary py-10 px-16 rounded-t-2xl mt-16">
       <div className="container mx-auto flex flex-col items-center gap-6">
-        <nav className="w-full flex flex-col md:flex-row justify-between items-center gap-6 mb-2">
+        <nav className="w-full flex flex-col md:flex-row justify-between max-w-xl items-center gap-6 mb-2">
           {navLinks.map((link) => (
             <a
               key={link.label}
