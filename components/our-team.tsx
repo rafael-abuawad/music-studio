@@ -10,8 +10,8 @@ export function OurTeam() {
           <CardContent>
             <div className="w-56 h-56 relative mb-4 rounded-xl overflow-hidden">
               <Image
-                src="/team-ethan.jpg"
-                alt="Ethan Bennett"
+                src="/images/pfps/mirovil.jpeg"
+                alt="Mirovil"
                 fill
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 100vw, 256px"
@@ -19,16 +19,13 @@ export function OurTeam() {
             </div>
             <div className="w-full">
               <div className="text-lg font-semibold ">
-                Ethan Bennett{" "}
+                Mike Blake{" "}
                 <span className="font-normal text-muted-foreground">
                   (MIROVIL)
                 </span>
               </div>
-              <div className="text-muted-foreground mt-2 text-sm">
-                Empowering artists with high-end production and creative depth.
-                Over a decade of experience collaborating globally.
-                International work with artists from Austria, Cuba, Brazil,
-                Chile, and other countries.
+              <div className="text-muted-foreground flex flex-col mt-2 gap-1 text-sm">
+                <p>Mirovil is a music producer and DJ who fuses electronic, urban, and alternative rhythms with an identity marked by honesty and emotional intensity. As Mike, the creator behind the project, he combines his experience in mixing and mastering to create unique sound experiences that deeply connect with the audience.</p>
               </div>
             </div>
           </CardContent>
@@ -38,8 +35,8 @@ export function OurTeam() {
           <CardContent>
             <div className="w-56 h-56 relative mb-4 rounded-xl overflow-hidden">
               <Image
-                src="/team-lucas.jpg"
-                alt="Lucas Carter"
+                src="/images/pfps/percoxerg.jpeg"
+                alt="PercoXerg"
                 fill
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 100vw, 256px"
@@ -47,16 +44,13 @@ export function OurTeam() {
             </div>
             <div className="w-full">
               <div className="text-lg font-semibold ">
-                Lucas Carter{" "}
+                Sergio Bedregal{" "}
                 <span className="font-normal text-muted-foreground">
                   (PercoXerg)
                 </span>
               </div>
               <div className="text-muted-foreground mt-2 text-sm">
-                Empowering artists with high-end production and creative depth.
-                Over a decade of experience collaborating globally.
-                International work with artists from Austria, Cuba, Brazil,
-                Chile, and other countries.
+                <p>Percoxerg is an audio producer and editor specialized in creating dense and deep atmospheres. With experience as a voice-over artist and technical training in audio, his work is characterized by dark and melancholic sounds, bringing a unique identity to each project through carefully structured musical arrangements.</p>
               </div>
             </div>
           </CardContent>
