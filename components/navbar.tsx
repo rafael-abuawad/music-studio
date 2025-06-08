@@ -13,7 +13,7 @@ const navigation = [
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container flex h-16 items-center mx-auto">
+      <nav className="container flex h-16 items-center mx-auto px-2 md:px-0">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <span className="font-bold">Middle City</span>

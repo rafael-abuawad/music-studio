@@ -3,28 +3,34 @@ import { Separator } from "@/components/ui/separator";
 
 const samples = [
   {
-    title: "Sample 1",
-    src: "https://open.spotify.com/embed/track/1IKnkAtTKion90wF8yxSgS?utm_source=generator",
+    title: "Shōgun",
+    artist: "ABBANA",
+    src: "https://open.spotify.com/embed/track/0vE48ZT2nTl24BbEzfSWod?utm_source=generator",
   },
   {
-    title: "Sample 2",
-    src: "https://open.spotify.com/embed/track/1IKnkAtTKion90wF8yxSgS?utm_source=generator",
+    title: "Una y Cuarenta",
+    artist: "ABBANA",
+    src: "https://open.spotify.com/embed/track/5jlKXChoawc86ulTu7Y0pl?utm_source=generator",
   },
   {
-    title: "Sample 3",
-    src: "https://open.spotify.com/embed/track/1IKnkAtTKion90wF8yxSgS?utm_source=generator",
+    title: "Singani",
+    artist: "Mirovil, ABBANA",
+    src: "https://open.spotify.com/embed/track/0YtuZNiKC1fueC2AY25Lwf?utm_source=generator",
   },
   {
-    title: "Sample 4",
-    src: "https://open.spotify.com/embed/track/1IKnkAtTKion90wF8yxSgS?utm_source=generator",
+    title: "Bate",
+    artist: "Mirovil",
+    src: "https://open.spotify.com/embed/track/2e7gScnZV7PdGZ0DHtYirp?utm_source=generator",
   },
   {
-    title: "Sample 5",
-    src: "https://open.spotify.com/embed/track/1IKnkAtTKion90wF8yxSgS?utm_source=generator",
+    title: "A Quien Corresponda",
+    artist: "Xorevil",
+    src: "https://open.spotify.com/embed/track/4vTxlHYxPad4v8GQ6uJdXU?utm_source=generator",
   },
   {
-    title: "Sample 6",
-    src: "https://open.spotify.com/embed/track/1IKnkAtTKion90wF8yxSgS?utm_source=generator",
+    title: "Nucleo",
+    artist: "Xorevil",
+    src: "https://open.spotify.com/embed/track/2upcsksPX2d92DmA2b2Kwg?utm_source=generator",
   },
 ];
 
@@ -43,17 +49,26 @@ export default function SamplesPage() {
 
         <div className="flex flex-col gap-8">
           {samples.map((sample) => (
-            <iframe
-              key={sample.title}
-              style={{ borderRadius: "12px" }}
-              width="100%"
-              height="352"
-              frameBorder="0"
-              allowFullScreen
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              src={sample.src}
-            ></iframe>
+            <div key={sample.title} className="relative">
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-background-primary/80 backdrop-blur-sm rounded-xl z-0 border">
+                <div className="text-center">
+                  <h3 className="font-medium">{sample.title}</h3>
+                  <p className="text-sm text-muted-foreground">{sample.artist}</p>
+                </div>
+              </div>
+              <div className="relative z10">
+                <iframe
+                  style={{ borderRadius: "12px" }}
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allowFullScreen
+                  loading="lazy"
+                  className="z-10"
+                  src={sample.src}
+                ></iframe>
+              </div>
+            </div>
           ))}
         </div>
       </section>

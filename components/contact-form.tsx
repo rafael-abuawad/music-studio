@@ -7,6 +7,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Mail, Send } from "lucide-react";
 import { useState } from "react";
 import { Label } from "./ui/label";
+import { createContactMessage } from "@/server/contact";
+import { CheckCircle2 } from "lucide-react";
+import { toast } from "sonner";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -16,11 +19,29 @@ export function ContactForm() {
     country: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+    setIsSubmitting(true);
+    try {
+      await createContactMessage(formData);
+      setShowSuccess(true);
+      toast.success("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        country: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Failed to send message:", error);
+      toast.error("Failed to send message");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -47,7 +68,25 @@ export function ContactForm() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
           <div className="md:order-2 border-b border-neutral-800 pb-10 mb-10 md:border-b-0 md:pb-0 md:mb-0">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="relative">
+              {showSuccess && (
+                <div className="absolute inset-0 z-10 flex items-center justify-center bg-background/80 backdrop-blur-sm">
+                  <div className="flex flex-col items-center gap-2 text-center p-6">
+                    <CheckCircle2 className="w-12 h-12 text-green-500" />
+                    <h3 className="text-xl font-semibold">Message Sent!</h3>
+                    <p className="text-muted-foreground">
+                      Thank you for contacting us. We'll get back to you soon.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setShowSuccess(false)}
+                      className="mt-4 text-sm text-primary hover:underline"
+                    >
+                      Send another message
+                    </button>
+                  </div>
+                </div>
+              )}
               <div className="space-y-4">
                 <div className="flex flex-col gap-1.5">
                   <Label htmlFor="name" className="text-muted-foreground">
@@ -59,6 +98,7 @@ export function ContactForm() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Name"
+                    required
                   />
                 </div>
 
@@ -72,6 +112,7 @@ export function ContactForm() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Email"
+                    required
                   />
                 </div>
 
@@ -110,18 +151,19 @@ export function ContactForm() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your project"
+                    required
                   />
                 </div>
               </div>
 
               <div className="mt-2">
                 <p className="text-xs text-muted-foreground">
-                  All fields are required
+                  All fields marked with * are required
                 </p>
 
                 <div className="mt-5">
-                  <Button type="submit">
-                    Submit
+                  <Button type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Submit"}
                     <Send className="shrink-0 size-4 transition" />
                   </Button>
                 </div>
