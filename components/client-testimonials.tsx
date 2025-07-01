@@ -1,9 +1,9 @@
 import {
   Card,
-  CardHeader,
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -32,10 +32,12 @@ export function ClientTestimonials() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {testimonials.map((item, idx) => (
           <Card key={idx} className="flex flex-col items-center p-6">
-            <img
+            <Image
               src={item.image}
               alt={item.author}
               className="w-48 h-48 object-cover rounded-lg mb-6 shadow-md"
+              width={192}
+              height={192}
             />
             <CardDescription className="text-base text-center mb-4">
               {item.text}

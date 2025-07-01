@@ -41,7 +41,7 @@ export default function SamplesPage() {
         <hgroup>
           <h1 className="text-2xl md:text-3xl font-bold mb-4">Samples</h1>
           <h2 className="text-lg md:text-xl text-muted-foreground font-normal mb-4">
-            We've worked with a wide range of artists, from all over the world.
+            We&apos;ve worked with a wide range of artists, from all over the world.
           </h2>
         </hgroup>
 

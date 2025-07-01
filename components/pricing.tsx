@@ -1,7 +1,6 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
   Card,
-  CardHeader,
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";

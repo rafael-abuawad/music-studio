@@ -75,7 +75,7 @@ export function ContactForm() {
                     <CheckCircle2 className="w-12 h-12 text-green-500" />
                     <h3 className="text-xl font-semibold">Message Sent!</h3>
                     <p className="text-muted-foreground">
-                      Thank you for contacting us. We'll get back to you soon.
+                      Thank you for contacting us. We&apos;ll get back to you soon.
                     </p>
                     <button
                       type="button"
