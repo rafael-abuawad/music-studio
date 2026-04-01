@@ -1,4 +1,5 @@
 import { Footer } from "@/components/footer";
+import { SectionHeader } from "@/components/section-header";
 import { Separator } from "@/components/ui/separator";
 
 const samples = [
@@ -36,38 +37,38 @@ const samples = [
 
 export default function SamplesPage() {
   return (
-    <div className="w-full h-full container mx-auto">
-      <section className="py-10 px-2">
-        <hgroup>
-          <h1 className="text-2xl md:text-3xl font-bold mb-4">Samples</h1>
-          <h2 className="text-lg md:text-xl text-muted-foreground font-normal mb-4">
-            We&apos;ve worked with a wide range of artists, from all over the world.
-          </h2>
-        </hgroup>
+    <div className="relative z-[1] container mx-auto h-full w-full">
+      <section className="landing-section-reveal animate-in fade-in slide-in-from-bottom-4 px-2 py-10 duration-700">
+        <SectionHeader
+          titleAs="h1"
+          title="Samples"
+          lead="We&apos;ve worked with a wide range of artists, from all over the world."
+        />
 
         <Separator className="my-4" />
 
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-10">
           {samples.map((sample) => (
-            <div key={sample.title} className="relative">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-background-primary/80 backdrop-blur-sm rounded-xl z-0 border">
-                <div className="text-center">
-                  <h3 className="font-medium">{sample.title}</h3>
-                  <p className="text-sm text-muted-foreground">{sample.artist}</p>
-                </div>
+            <div
+              key={sample.title}
+              className="flex flex-col gap-3 rounded-xl border border-border/60 bg-card/30 p-4 shadow-sm transition-[box-shadow,border-color] duration-300 hover:border-primary/20 hover:shadow-md md:p-5"
+            >
+              <div className="text-center md:text-left">
+                <h3 className="font-display text-lg font-semibold tracking-tight">
+                  {sample.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">{sample.artist}</p>
               </div>
-              <div className="relative z10">
-                <iframe
-                  style={{ borderRadius: "12px" }}
-                  width="100%"
-                  height="352"
-                  frameBorder="0"
-                  allowFullScreen
-                  loading="lazy"
-                  className="z-10"
-                  src={sample.src}
-                ></iframe>
-              </div>
+              <iframe
+                style={{ borderRadius: "12px" }}
+                width="100%"
+                height="352"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                className="w-full border-0"
+                src={sample.src}
+                title={`${sample.title} — Spotify`}
+              />
             </div>
           ))}
         </div>

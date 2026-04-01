@@ -1,5 +1,6 @@
 "use client";
 
+import { SectionHeader } from "@/components/section-header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -55,19 +56,16 @@ export function ContactForm() {
   };
 
   return (
-    <section className="py-10 px-2 flex flex-col items-center">
+    <section className="landing-section-reveal animate-in fade-in slide-in-from-bottom-4 flex flex-col items-center py-10 px-2 duration-700">
       <div className="container mx-auto">
-        <div className="max-w-3xl mb-10 lg:mb-14">
-          <h2 className="font-semibold text-2xl md:text-4xl md:leading-tight">
-            Contact us
-          </h2>
-          <p className="mt-1 text-muted-foreground">
-            Whatever your goal - we will get you there.
-          </p>
-        </div>
+        <SectionHeader
+          title="Contact us"
+          titleClassName="text-3xl md:text-4xl md:leading-tight"
+          lead="Whatever your goal - we will get you there."
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
-          <div className="md:order-2 border-b border-neutral-800 pb-10 mb-10 md:border-b-0 md:pb-0 md:mb-0">
+          <div className="md:order-2 mb-10 border-b border-border pb-10 md:mb-0 md:border-b-0 md:pb-0">
             <form onSubmit={handleSubmit} className="relative">
               {showSuccess && (
                 <div className="absolute inset-0 z-10 flex items-center justify-center bg-background/80 backdrop-blur-sm">
@@ -177,7 +175,7 @@ export function ContactForm() {
                 <MapPin className="shrink-0 size-6 text-muted-foreground" />
                 <div className="grow">
                   <h4 className="font-semibold">Our address:</h4>
-                  <address className="mt-1 text-neutral-400 text-sm not-italic">
+                  <address className="mt-1 text-sm not-italic text-muted-foreground">
                     300 Bath Street, Tay House
                     <br />
                     Glasgow G2 4JR, United Kingdom
@@ -192,7 +190,7 @@ export function ContactForm() {
                 <div className="grow">
                   <h4 className="font-semibold">Email us:</h4>
                   <a
-                    className="mt-1 text-muted-foreground text-sm hover:text-neutral-200 focus:outline-hidden focus:text-neutral-200"
+                    className="mt-1 text-sm text-muted-foreground hover:text-primary focus:text-primary focus:outline-hidden"
                     href="mailto:hello@example.so"
                   >
                     hello@example.so

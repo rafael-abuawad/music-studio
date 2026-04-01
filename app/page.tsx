@@ -9,7 +9,7 @@ import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="w-full h-full container mx-auto">
+    <div className="relative z-[1] container mx-auto h-full w-full">
       <div className="flex flex-col gap-12 pt-4">
         <HeroSection
           title="Your sound deserves more than a preset."

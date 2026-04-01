@@ -1,12 +1,13 @@
 import Image from "next/image";
+import { SectionHeader } from "@/components/section-header";
 import { Card, CardContent } from "./ui/card";
 
 export function OurTeam() {
   return (
-    <section className="py-10 px-2">
-      <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Team</h2>
+    <section className="landing-section-reveal animate-in fade-in slide-in-from-bottom-4 py-10 px-2 duration-700">
+      <SectionHeader title="Our Team" />
       <div className="flex flex-col md:flex-row gap-8">
-        <Card className="flex-1 flex flex-col items-center">
+        <Card className="flex flex-1 flex-col items-center transition-[box-shadow,border-color] duration-300 hover:border-primary/20 hover:shadow-md">
           <CardContent>
             <div className="w-56 h-56 relative mb-4 rounded-xl overflow-hidden">
               <Image
@@ -31,7 +32,7 @@ export function OurTeam() {
           </CardContent>
         </Card>
 
-        <Card className="flex-1 flex flex-col items-center">
+        <Card className="flex flex-1 flex-col items-center transition-[box-shadow,border-color] duration-300 hover:border-primary/20 hover:shadow-md">
           <CardContent>
             <div className="w-56 h-56 relative mb-4 rounded-xl overflow-hidden">
               <Image

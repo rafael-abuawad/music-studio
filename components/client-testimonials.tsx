@@ -1,3 +1,4 @@
+import { SectionHeader } from "@/components/section-header";
 import {
   Card,
   CardTitle,
@@ -25,13 +26,14 @@ const testimonials = [
 
 export function ClientTestimonials() {
   return (
-    <section className="py-10 px-2">
-      <h2 className="text-2xl md:text-3xl font-bold mb-8">
-        Client Testimonials
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section className="landing-section-reveal animate-in fade-in slide-in-from-bottom-4 py-10 px-2 duration-700">
+      <SectionHeader title="Client Testimonials" />
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {testimonials.map((item, idx) => (
-          <Card key={idx} className="flex flex-col items-center p-6">
+          <Card
+            key={idx}
+            className="flex flex-col items-center p-6 transition-[box-shadow,border-color] duration-300 hover:border-primary/15 hover:shadow-md"
+          >
             <Image
               src={item.image}
               alt={item.author}

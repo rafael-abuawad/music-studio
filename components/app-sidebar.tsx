@@ -47,7 +47,9 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader>
-        <span className="text-2xl font-bold">Middle City</span>
+        <span className="font-display text-xl font-semibold tracking-[0.06em] text-sidebar-foreground">
+          Middle City
+        </span>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>

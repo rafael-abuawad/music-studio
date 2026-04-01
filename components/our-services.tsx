@@ -4,6 +4,7 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { SectionHeader } from "@/components/section-header";
 import { MicIcon, MicrowaveIcon, MusicIcon } from "lucide-react";
 import { ReactNode } from "react";
 
@@ -36,19 +37,19 @@ const services: { title: string; description: string; icon: ReactNode }[] = [
 
 export function OurServices() {
   return (
-    <section className="py-10 px-2">
-      <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Services</h2>
-      <h3 className="text-3xl md:text-5xl font-extrabold mb-4 text-primary">
-        Professional Music Production Services
-      </h3>
-      <p className="text-muted-foreground mb-10 max-w-2xl">
-        MiddleCity Records offers a comprehensive suite of music production
-        services tailored to meet the needs of emerging artists. From recording
-        to mastering, we ensure your music sounds its best.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="landing-section-reveal animate-in fade-in slide-in-from-bottom-4 py-10 px-2 duration-700">
+      <SectionHeader
+        eyebrow="Our Services"
+        title="Professional Music Production Services"
+        titleClassName="text-primary"
+        lead="MiddleCity Records offers a comprehensive suite of music production services tailored to meet the needs of emerging artists. From recording to mastering, we ensure your music sounds its best."
+      />
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         {services.map((service) => (
-          <Card key={service.title}>
+          <Card
+            key={service.title}
+            className="transition-[box-shadow,border-color] duration-300 hover:border-primary/20 hover:shadow-md"
+          >
             <CardHeader>
               <span className="text-primary mb-2">{service.icon}</span>
               <CardTitle>{service.title}</CardTitle>

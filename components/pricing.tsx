@@ -1,3 +1,4 @@
+import { SectionHeader } from "@/components/section-header";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
   Card,
@@ -90,8 +91,8 @@ const pricingTabs = [
 
 export function Pricing() {
   return (
-    <section className="py-10 px-2">
-      <h2 className="text-2xl md:text-3xl font-bold mb-4">Pricing</h2>
+    <section className="landing-section-reveal animate-in fade-in slide-in-from-bottom-4 py-10 px-2 duration-700">
+      <SectionHeader title="Pricing" />
       <Tabs defaultValue={pricingTabs[0].value} className="w-full">
         <TabsList className="mb-6 hidden md:flex">
           {pricingTabs.map((tab) => (
@@ -117,7 +118,10 @@ export function Pricing() {
           <TabsContent key={tab.value} value={tab.value}>
             <div className="flex flex-col gap-6">
               {tab.items.map((item, idx) => (
-                <Card key={idx} className="overflow-hidden py-0">
+                <Card
+                  key={idx}
+                  className="overflow-hidden py-0 transition-[box-shadow,border-color] duration-300 hover:border-primary/25 hover:shadow-lg"
+                >
                   <div
                     className="h-48 w-full bg-cover bg-center flex items-end"
                     style={{ backgroundImage: `url(${item.image})` }}

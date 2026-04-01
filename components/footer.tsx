@@ -1,4 +1,4 @@
-import { TwitterIcon, InstagramIcon, FacebookIcon } from "lucide-react";
+import { BirdIcon, CameraIcon, FanIcon } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -8,21 +8,21 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: TwitterIcon, href: "#" },
-  { icon: InstagramIcon, href: "#" },
-  { icon: FacebookIcon, href: "#" },
+  { icon: BirdIcon, href: "#" },
+  { icon: CameraIcon, href: "#" },
+  { icon: FanIcon, href: "#" },
 ];
 
 export function Footer() {
   return (
-    <div className="w-full bg-secondary py-10 px-16 rounded-t-2xl mt-16">
+    <div className="mt-16 w-full rounded-t-2xl border-t border-primary/20 bg-gradient-to-b from-primary/[0.07] to-secondary py-10 px-6 md:px-16">
       <div className="container mx-auto flex flex-col items-center gap-6">
-        <nav className="w-full flex flex-col md:flex-row justify-between max-w-xl items-center gap-6 mb-2">
+        <nav className="mb-2 flex w-full max-w-xl flex-col items-center justify-between gap-6 md:flex-row">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-lg text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium tracking-wide text-muted-foreground transition-colors hover:text-primary md:text-base"
             >
               {link.label}
             </a>
